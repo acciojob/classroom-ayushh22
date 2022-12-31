@@ -8,9 +8,12 @@ import java.util.List;
 @Service
 public class StudentService {
 
-    @Autowired
-    static
+    final
     StudentRepository studentRepository;
+
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public void addStudentService(Student student) {
         studentRepository.addStudent(student);
